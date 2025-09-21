@@ -21,18 +21,18 @@ import {
 } from "react-icons/si";
 
 const logos = [
-  <FaHtml5 className="text-orange-500" />,
-  <FaCss3Alt className="text-blue-500" />,
-  <FaJs className="text-yellow-400" />,
-  <SiTypescript className="text-blue-400" />,
-  <FaReact className="text-cyan-400" />,
-  <SiNextdotjs className="text-white" />,
-  <SiTailwindcss className="text-sky-400" />,
-  <SiRedux className="text-purple-500" />,
-  <FaGitAlt className="text-red-500" />,
-  <FaGithub className="text-gray-300" />,
-  <FaNodeJs className="text-green-500" />,
-  <SiExpress className="text-gray-400" />,
+  { id: 1, icon: <FaHtml5 className="text-orange-500" /> },
+  { id: 2, icon: <FaCss3Alt className="text-blue-500" /> },
+  { id: 3, icon: <FaJs className="text-yellow-400" /> },
+  { id: 4, icon: <SiTypescript className="text-blue-400" /> },
+  { id: 5, icon: <FaReact className="text-cyan-400" /> },
+  { id: 6, icon: <SiNextdotjs className="text-white" /> },
+  { id: 7, icon: <SiTailwindcss className="text-sky-400" /> },
+  { id: 8, icon: <SiRedux className="text-purple-500" /> },
+  { id: 9, icon: <FaGitAlt className="text-red-500" /> },
+  { id: 10, icon: <FaGithub className="text-gray-300" /> },
+  { id: 11, icon: <FaNodeJs className="text-green-500" /> },
+  { id: 12, icon: <SiExpress className="text-gray-400" /> },
 ];
 
 export default function Hero() {
@@ -87,10 +87,9 @@ export default function Hero() {
             ease: "linear",
           }}
         >
-          {/* logos.concat(logos) → ikinci dəfə təkrar → boşluq olmur */}
-          {logos.concat(logos).map((icon, idx) => (
-            <div key={idx} className="flex-shrink-0">
-              {icon}
+          {logos.concat(logos).map((logo, idx) => (
+            <div key={`${logo.id}-${idx}`} className="flex-shrink-0">
+              {logo.icon}
             </div>
           ))}
         </motion.div>
